@@ -1,0 +1,92 @@
+@mixin text-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+@mixin keys
+    0%
+      -webkit-transform: rotateX(90deg) skewy(45deg) perspective(20px)
+      transform: rotateX(90deg) skewy(45deg) perspective(20px)
+      -webkit-transform-origin: top
+      -ms-transform-origin: top
+      transform-origin: top
+      -webkit-transform-style: preserve-3d
+      -moz-transform-style: preserve-3d
+      transform-style: preserve-3d
+    50%
+      -webkit-transform: rotateX(45deg) skewy(45deg) perspective(20px)
+      transform: rotateX(45deg) skewy(23deg) perspective(20px)
+      -webkit-transform-origin: top
+      -ms-transform-origin: top
+      transform-origin: top
+      -webkit-transform-style: preserve-3d
+      -moz-transform-style: preserve-3d
+      transform-style: preserve-3d
+    100%
+      -webkit-transform: rotateX(0deg) skewy(45deg) perspective(20px)
+      transform: rotateX(0deg) skewy(0deg) perspective(20px)
+      -webkit-transform-origin: top
+      -ms-transform-origin: top
+      transform-origin: top
+      -webkit-transform-style: preserve-3d
+      -moz-transform-style: preserve-3d
+      transform-style: preserve-3d
+
+
+
+
+.nav-tab
+  display: flex
+.nav-tab>li,li>ul
+  list-style: none
+  +text-select
+  cursor: pointer
+li>ul>li
+  background: rgba(0,0,0,.5)
+  border: 1px solid silver
+  color: white
+  padding: 10px 30px
+  border: 1px solid maroon
+  font-family: "Georgia","Roboto",cursive
+  font-size: 16px
+  text-transform: capitalize
+
+li>ul
+  padding: 0px!important
+
+.menu-head
+  background: orange
+  color: white
+  padding: 10px 30px
+  border: 1px solid maroon
+  font-family: "Georgia","Roboto",cursive
+  font-size: 16px
+  text-transform: capitalize
+  &:hover
+    background: olive
+.dropdown
+  display: none
+
+.menu-head:hover~.dropdown
+  display: block
+
+@-webkit-keyframes menubar
+  +keys
+@-moz-keyframes menubar
+  +keys
+@-o-keyframes menubar
+  +keys
+@keyframes menubar
+  +keys
+
+.menu-head:hover~.dropdown>li
+  -webkit-animation-fill-mode: both
+  -moz-animation-fill-mode: both
+  -ms-animation-fill-mode: both
+  -o-animation-fill-mode: both
+  animation-fill-mode: both
+  -webkit-animation: menubar .5s linear 0s alternate
+  animation: menubar .5s linear 0s alternate
