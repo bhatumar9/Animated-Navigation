@@ -9,6 +9,7 @@
     <title>Navigation animations</title>
   </head>
   <body>
+    <div class="nav-wrap">
     <nav>
       <ul class="nav-tab">
         <li>
@@ -56,21 +57,40 @@
         </li>
       </ul>
     </nav>
+    </div>
+    <div class="side1">
+<h1>going up</h1>
+    </div><div class="side2">
+<h1>going down</h1>
+    </div>
   </body>
 </html>
 
 
 
 
-<!-- <script type="text/javascript" language="javascript">
-var abc=function(e,a){
-  $(".menu-head").hover(function(event){
-    var domElement =$(event.domElement);
-            console.log(domElement)
-            $('.dropdown').hide()
-           $(this).siblings().toggle()
-
-      });
-}
-$(abc)
-</script> -->
+<script type="text/javascript" language="javascript">
+$(document).on("scroll",function(e) {
+  $('nav').css({position: 'fixed',top: 0+'px'});
+});
+$('.nav-tab').hide(800).delay(500).show(800);
+</script>
+<script type="text/javascript" language="javascript">
+$('ul>li').on("click",function(e){
+  $(this).toggleClass('hello')
+});
+</script>
+<script type="text/javascript" language="javascript">
+$(document).on("scroll",function() {
+  var a=$('body').scrollTop();
+  a=-7050+(1.5*a);
+  $('.side1').css({top: a+'px'});
+});
+</script>
+<script type="text/javascript">
+$(document).on("scroll",function() {
+  var a=$('body').scrollTop();
+a=(1.5*a);
+$('.side2').css({top: -a+'px'});
+});
+</script>

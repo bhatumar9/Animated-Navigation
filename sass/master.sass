@@ -36,10 +36,16 @@
       transform-style: preserve-3d
 
 
-
+body
+  height: 800vh
+  background-image: url('../images/bg.jpg')
+  z-index: -1
 
 .nav-tab
   display: flex
+  z-index: 100
+  margin: auto
+  padding-left: 0
 .nav-tab>li,li>ul
   list-style: none
   +text-select
@@ -97,3 +103,23 @@ li>ul
     display: block
     color: black
     background-color: rgba(255,255,255,.5)
+
+.hello
+  transform: rotateY(360deg)
+  transition: transform 500ms linear 0s
+.side1,.side2
+  display: inline-block
+  width: 45%
+  background-image: url("../images/side1.jpg")
+  color: black
+  height: 8000px
+  z-index: -1
+  position: fixed
+  top: 0px
+.side1
+  top: -7050px
+.side2
+  background-image: url("../images/side2.jpg")
+  background-position: center
+  width: 55%
+  left: 45%
